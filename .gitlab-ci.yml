@@ -3,6 +3,8 @@ stages:
 
 publish:npm:
   stage: publish
+  # NOTE: `image` работает только для Docker/Kubernetes executor.
+  # На Shell executor (как в вашем логе) этот параметр игнорируется.
   image: node:22
   rules:
     # Аналог GitHub Actions: on.push.tags: ["v*"]
@@ -12,8 +14,22 @@ publish:npm:
   script:
     - node --version
     - npm --version
-    # Настраиваем токен для npmjs registry (токен хранится в GitLab CI/CD Variables как NPM_TOKEN)
-    - npm config set registry "https://registry.npmjs.org"
-    - npm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
+    # Фейлимся сразу, если токен не прокинулся (самая частая причина ENEEDAUTH)
+    - |
+      if [ -z "${NPM_TOKEN:-}" ]; then
+        echo "ERROR: NPM_TOKEN is not set for this job."
+        echo "Check GitLab CI/CD Variables: Protected/Masked/Environment scope and whether the tag/ref is protected."
+        exit 1
+      fi
+    # Явно создаём ~/.npmrc (npm умеет подставлять env vars вида ${NPM_TOKEN})
+    - |
+      cat > ~/.npmrc <<'EOF'
+      registry=https://registry.npmjs.org/
+      always-auth=true
+      //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+      @front-cmdt:registry=https://registry.npmjs.org/
+      EOF
+    # Быстрая проверка авторизации (без публикации)
+    - npm whoami
     - npm publish
 
