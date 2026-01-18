@@ -1,0 +1,25 @@
+{
+  "name": "@front-cmdt/format",
+  "version": "1.0.5",
+  "keywords": [],
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "ISC",
+  "peerDependencies": {
+    "prettier": "^3.0.0"
+  },
+  "dependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2"
+  },
+  "scripts": {
+    "release:patch": "npm version patch -m \"release: v%s\" && git push --follow-tags",
+    "release:minor": "npm version minor -m \"release: v%s\" && git push --follow-tags",
+    "release:major": "npm version major -m \"release: v%s\" && git push --follow-tags",
+    "release:push": "git push --follow-tags"
+  },
+  "exports": {
+    "./prettier": "./src/prettier.config.mjs"
+  }
+}
