@@ -21,5 +21,8 @@
   },
   "exports": {
     "./prettier": "./src/prettier.config.mjs"
+  },
+  "devDependencies": {
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
