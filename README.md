@@ -16,7 +16,7 @@ yarn add -D @front-cmdt/format prettier
 pnpm add -D @front-cmdt/format prettier
 ```
 
-### Создайте: `prettier.js` в проекте
+### Создайте: `prettier.config.js` в проекте
 
 ```js
 import config from "@front-cmdt/format/prettier"
@@ -57,7 +57,7 @@ yarn add -D @front-cmdt/format prettier
 pnpm add -D @front-cmdt/format prettier
 ```
 
-### Create: `prettier.js` in your project
+### Create: `prettier.config.js` in your project
 
 ```js
 import config from "@front-cmdt/format/prettier"
