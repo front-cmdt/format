@@ -1,6 +1,6 @@
 {
   "name": "@front-cmdt/format",
-  "version": "1.0.13",
+  "version": "1.1.0",
   "keywords": [],
   "type": "module",
   "publishConfig": {
@@ -21,8 +21,5 @@
   },
   "exports": {
     "./prettier": "./src/prettier.config.mjs"
-  },
-  "devDependencies": {
-    "prettier-plugin-astro": "^0.14.1"
   }
 }
