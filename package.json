@@ -1,7 +1,18 @@
 {
   "name": "@front-cmdt/format",
   "version": "1.0.13",
-  "keywords": [],
+  "keywords": [
+    "prettier",
+    "trivago",
+    "prettier-plugin-sort-imports",
+    "lint",
+    "linting",
+    "format",
+    "formatting",
+    "code style",
+    "code formatting",
+    "code styling"
+  ],
   "type": "module",
   "publishConfig": {
     "access": "public"
