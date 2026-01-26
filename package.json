@@ -22,8 +22,7 @@
     "prettier": "^3.0.0"
   },
   "dependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "prettier-plugin-astro": "^0.14.1"
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2"
   },
   "scripts": {
     "release:patch": "npm version patch -m \"release: v%s\" && git push --follow-tags",

@@ -52,14 +52,5 @@ export default {
     "^./(.*)$", // Относительные импорты из текущей директории
   ],
   // Подключённые плагины Prettier
-  plugins: ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-astro"],
-  // Переопределения для конкретных типов файлов
-  overrides: [
-    {
-      files: "*.astro",
-      options: {
-        parser: "astro", // Использовать Astro парсер для .astro файлов
-      },
-    },
-  ],
+  plugins: ["@trivago/prettier-plugin-sort-imports"],
 }
