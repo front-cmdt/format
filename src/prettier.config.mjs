@@ -12,7 +12,7 @@ export default {
   // Использовать одинарные кавычки вместо двойных
   singleQuote: true,
   // Одинарные кавычки в JSX
-  jsSingleQuote: true,
+  jsxSingleQuote: true,
   // Скобки вокруг единственного параметра стрелочной функции: "avoid" - убирать, "always" - всегда
   arrowParens: "avoid",
   // Максимальная длина строки перед переносом
@@ -34,9 +34,9 @@ export default {
   // Сортировать спецификаторы внутри импорта: import { a, b, c } from 'module'
   importOrderSortSpecifiers: true,
   // Сортировка без учёта регистра
-  importOrderInsensitive: true,
+  importOrderCaseInsensitive: true,
   // Плагины парсера для корректной обработки синтаксиса
-  importOrderParserPlugins: ["classProperties", "decorators-legacy", "typescript"],
+  importOrderParserPlugins: ["classProperties", "decorators-legacy", "typescript", "jsx"],
   // Порядок группировки импортов (регулярные выражения)
   importOrder: [
     "<THIRD_PARTY_MODULES>", // Сторонние модули (node_modules)
