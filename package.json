@@ -1,6 +1,6 @@
 {
   "name": "@front-cmdt/format",
-  "version": "1.0.13",
+  "version": "1.2.2",
   "keywords": [
     "prettier",
     "trivago",
@@ -32,8 +32,5 @@
   },
   "exports": {
     "./prettier": "./src/prettier.config.mjs"
-  },
-  "devDependencies": {
-    "prettier-plugin-astro": "^0.14.1"
   }
 }

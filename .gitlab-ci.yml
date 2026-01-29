@@ -3,39 +3,17 @@ stages:
 
 publish:npm:
   stage: publish
-  # NOTE: `image` работает только для Docker/Kubernetes executor.
-  # На Shell executor (как в вашем логе) этот параметр игнорируется.
   image: node:22
   rules:
     # Аналог GitHub Actions: on.push.tags: ["v*"]
-    # Публикацию лучше разрешать только с protected-тегов, чтобы
-    # можно было хранить NPM_TOKEN как Protected variable.
-    - if: '$CI_COMMIT_TAG =~ /^v.*/ && $CI_COMMIT_REF_PROTECTED == "true"'
-      when: on_success
-    # На НЕ-protected тегах job будет виден, но только вручную.
-    # (Так вы увидите job в pipeline, даже если тег ещё не protected.)
     - if: '$CI_COMMIT_TAG =~ /^v.*/'
-      when: manual
+      when: on_success
     - when: never
   script:
     - node --version
     - npm --version
-    # Фейлимся сразу, если токен не прокинулся (самая частая причина ENEEDAUTH)
-    - |
-      if [ -z "${NPM_TOKEN:-}" ]; then
-        echo "ERROR: NPM_TOKEN is not set for this job."
-        echo "Check GitLab CI/CD Variables: Protected/Masked/Environment scope and whether the tag/ref is protected."
-        exit 1
-      fi
-    # Явно создаём ~/.npmrc (npm умеет подставлять env vars вида ${NPM_TOKEN})
-    - |
-      cat > ~/.npmrc <<'EOF'
-      registry=https://registry.npmjs.org/
-      always-auth=true
-      //registry.npmjs.org/:_authToken=${NPM_TOKEN}
-      @front-cmdt:registry=https://registry.npmjs.org/
-      EOF
-    # Быстрая проверка авторизации (без публикации)
-    - npm whoami
+    # Настраиваем токен для npmjs registry (токен хранится в GitLab CI/CD Variables как NPM_TOKEN)
+    - npm config set registry "https://registry.npmjs.org"
+    - npm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
     - npm publish
 
