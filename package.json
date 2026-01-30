@@ -1,6 +1,6 @@
 {
   "name": "@front-cmdt/format",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "keywords": [
     "prettier",
     "trivago",
@@ -43,6 +43,16 @@
     "pub:local": "npm run build && yalc push"
   },
   "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/prettier.config.d.ts",
+        "default": "./dist/prettier.config.js"
+      },
+      "require": {
+        "types": "./dist/prettier.config.d.cts",
+        "default": "./dist/prettier.config.cjs"
+      }
+    },
     "./prettier": {
       "import": {
         "types": "./dist/prettier.config.d.ts",
