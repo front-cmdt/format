@@ -24,13 +24,35 @@
   "dependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.2"
   },
+  "main": "./dist/prettier.config.cjs",
+  "module": "./dist/prettier.config.js",
+  "types": "./dist/prettier.config.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsup src/prettier.config.mjs --format esm,cjs --dts --clean",
     "release:patch": "npm version patch -m \"release: v%s\" && git push --follow-tags",
     "release:minor": "npm version minor -m \"release: v%s\" && git push --follow-tags",
     "release:major": "npm version major -m \"release: v%s\" && git push --follow-tags",
-    "release:push": "git push --follow-tags"
+    "release:push": "git push --follow-tags",
+    "pub:local": "npm run build && yalc push"
   },
   "exports": {
-    "./prettier": "./src/prettier.config.mjs"
+    "./prettier": {
+      "import": {
+        "types": "./dist/prettier.config.d.ts",
+        "default": "./dist/prettier.config.js"
+      },
+      "require": {
+        "types": "./dist/prettier.config.d.cts",
+        "default": "./dist/prettier.config.cjs"
+      }
+    }
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "yalc": "^1.0.0-pre.53"
   }
 }
