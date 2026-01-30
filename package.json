@@ -5,6 +5,8 @@
     "prettier",
     "trivago",
     "prettier-plugin-sort-imports",
+    "tailwindcss",
+    "prettier-plugin-tailwindcss",
     "lint",
     "linting",
     "format",
@@ -22,19 +24,21 @@
     "prettier": "^3.0.0"
   },
   "dependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^5.2.2"
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "prettier-plugin-tailwindcss": "^0.7.2"
   },
   "main": "./dist/prettier.config.cjs",
   "module": "./dist/prettier.config.js",
   "types": "./dist/prettier.config.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "tsup src/prettier.config.mjs --format esm,cjs --dts --clean",
-    "release:patch": "npm version patch -m \"release: v%s\" && git push --follow-tags",
-    "release:minor": "npm version minor -m \"release: v%s\" && git push --follow-tags",
-    "release:major": "npm version major -m \"release: v%s\" && git push --follow-tags",
+    "release:patch": "yarn build && npm version patch -m \"release: v%s\" && git push --follow-tags",
+    "release:minor": "yarn build && npm version minor -m \"release: v%s\" && git push --follow-tags",
+    "release:major": "yarn build && npm version major -m \"release: v%s\" && git push --follow-tags",
     "release:push": "git push --follow-tags",
     "pub:local": "npm run build && yalc push"
   },

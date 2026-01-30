@@ -1,6 +1,9 @@
 # @front-cmdt/format
 
-Общий **Prettier config** для проектов. Включает сортировку импортов через `@trivago/prettier-plugin-sort-imports`.
+Общий **Prettier config** для проектов. Включает:
+
+- Сортировку импортов через `@trivago/prettier-plugin-sort-imports`
+- Автоматическую сортировку Tailwind CSS классов через `prettier-plugin-tailwindcss`
 
 ## Требования
 
@@ -41,7 +44,10 @@ export default config
 
 # @front-cmdt/format (EN)
 
-Shared **Prettier config** for projects. Includes import sorting via `@trivago/prettier-plugin-sort-imports`.
+Shared **Prettier config** for projects. Includes:
+
+- Import sorting via `@trivago/prettier-plugin-sort-imports`
+- Automatic Tailwind CSS class sorting via `prettier-plugin-tailwindcss`
 
 ## Requirements
 
