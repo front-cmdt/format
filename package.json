@@ -33,7 +33,12 @@
   },
   "dependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "prettier-plugin-tailwindcss": "^0.7.2"
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "stylelint": "^17.1.1",
+    "stylelint-config-clean-order": "^8.0.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-scss": "^7.0.0"
   },
   "main": "./dist/prettier.config.cjs",
   "module": "./dist/prettier.config.js",
@@ -85,11 +90,6 @@
   "devDependencies": {
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
-    "yalc": "^1.0.0-pre.53",
-    "stylelint": "^17.1.1",
-    "stylelint-config-clean-order": "^8.0.0",
-    "stylelint-config-standard": "^40.0.0",
-    "stylelint-config-standard-scss": "^17.0.0",
-    "stylelint-scss": "^7.0.0"
+    "yalc": "^1.0.0-pre.53"
   }
 }
