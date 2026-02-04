@@ -58,19 +58,11 @@ export default config;
 ## Установка
 
 ```bash
-#=====для CSS=====
-npm i -D stylelint stylelint-config-clean-order stylelint-config-standard
+npm i -D @front-cmdt/format stylelint
 # или
-yarn add -D stylelint stylelint-config-clean-order stylelint-config-standard
+yarn add -D @front-cmdt/format stylelint
 # или
-pnpm add -D stylelint stylelint-config-clean-order stylelint-config-standard
-
-#=====для SCSS=====
-npm i -D stylelint stylelint-config-clean-order stylelint-config-standard stylelint-config-standard-scss stylelint-scss
-# или
-yarn add -D stylelint stylelint-config-clean-order stylelint-config-standard stylelint-config-standard-scss stylelint-scss
-# или
-pnpm add -D stylelint stylelint-config-clean-order stylelint-config-standard stylelint-config-standard-scss stylelint-scss
+pnpm add -D @front-cmdt/format stylelint
 ```
 
 ## Пример скриптов
@@ -148,19 +140,11 @@ Shared **Stylelint** for projects. Includes:
 ## Install
 
 ```bash
-#=====for CSS=====
-npm i -D stylelint stylelint-config-clean-order stylelint-config-standard
-# или
-yarn add -D stylelint stylelint-config-clean-order stylelint-config-standard
-# или
-pnpm add -D stylelint stylelint-config-clean-order stylelint-config-standard
-
-#=====for SCSS=====
-npm i -D stylelint stylelint-config-clean-order stylelint-config-standard stylelint-config-standard-scss stylelint-scss
-# или
-yarn add -D stylelint stylelint-config-clean-order stylelint-config-standard stylelint-config-standard-scss stylelint-scss
-# или
-pnpm add -D stylelint stylelint-config-clean-order stylelint-config-standard stylelint-config-standard-scss stylelint-scss
+npm i -D @front-cmdt/format stylelint
+# or
+yarn add -D @front-cmdt/format stylelint
+# or
+pnpm add -D @front-cmdt/format stylelint
 ```
 
 ## Script examples

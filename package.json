@@ -13,7 +13,14 @@
     "formatting",
     "code style",
     "code formatting",
-    "code styling"
+    "code styling",
+    "stylelint",
+    "stylelint-config",
+    "stylelint-scss",
+    "scss lint",
+    "scss linting",
+    "css lint",
+    "css linting"
   ],
   "type": "module",
   "publishConfig": {
@@ -22,12 +29,7 @@
   "license": "ISC",
   "peerDependencies": {
     "prettier": "^3.0.0",
-    "sass": "^1.97.3",
-    "stylelint": "^17.1.1",
-    "stylelint-config-clean-order": "^8.0.0",
-    "stylelint-config-standard": "^40.0.0",
-    "stylelint-config-standard-scss": "^17.0.0",
-    "stylelint-scss": "^7.0.0"
+    "sass": "^1.97.3"
   },
   "dependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
@@ -41,7 +43,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "tsup src/prettier.config.mjs --format esm,cjs --dts --clean",
+    "build": "tsup src/prettier.config.mjs src/stylelint.config.mjs --format esm,cjs --dts --clean",
     "release:patch": "yarn build && npm version patch -m \"release: v%s\" && git push --follow-tags",
     "release:minor": "yarn build && npm version minor -m \"release: v%s\" && git push --follow-tags",
     "release:major": "yarn build && npm version major -m \"release: v%s\" && git push --follow-tags",
@@ -70,11 +72,26 @@
         "types": "./dist/prettier.config.d.cts",
         "default": "./dist/prettier.config.cjs"
       }
+    },
+    "./stylelint": {
+      "import": {
+        "types": "./dist/stylelintrc.config.d.ts",
+        "default": "./dist/stylelintrc.config.js"
+      },
+      "require": {
+        "types": "./dist/stylelintrc.config.d.cts",
+        "default": "./dist/stylelintrc.config.cjs"
+      }
     }
   },
   "devDependencies": {
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
-    "yalc": "^1.0.0-pre.53"
+    "yalc": "^1.0.0-pre.53",
+    "stylelint": "^17.1.1",
+    "stylelint-config-clean-order": "^8.0.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-scss": "^7.0.0"
   }
 }
