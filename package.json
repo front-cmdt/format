@@ -48,9 +48,7 @@
     "release:minor": "yarn build && npm version minor -m \"release: v%s\" && git push --follow-tags",
     "release:major": "yarn build && npm version major -m \"release: v%s\" && git push --follow-tags",
     "release:push": "git push --follow-tags",
-    "pub:local": "npm run build && yalc push",
-    "stylelint": "stylelint '**/*.{css,scss}'",
-    "stylelint:fix": "stylelint '**/*.{css,scss}' --fix"
+    "pub:local": "npm run build && yalc push"
   },
   "exports": {
     ".": {
