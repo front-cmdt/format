@@ -65,6 +65,20 @@ yarn add -D @front-cmdt/format stylelint
 pnpm add -D @front-cmdt/format stylelint
 ```
 
+
+### Создайте: `stylelint.config.cjs` в проекте
+
+```js
+const baseConfig = require("@front-cmdt/format/stylelint");
+module.exports = {
+  ...baseConfig,
+  extends: [...(baseConfig.extends || ["stylelint-config-standard-scss"])],
+  rules: {
+    // свои переопределения
+  },
+};
+```
+
 ## Пример скриптов
 
 `package.json`:
@@ -77,6 +91,7 @@ pnpm add -D @front-cmdt/format stylelint
   }
 }
 ```
+
 
 ---
 
@@ -145,6 +160,20 @@ npm i -D @front-cmdt/format stylelint
 yarn add -D @front-cmdt/format stylelint
 # or
 pnpm add -D @front-cmdt/format stylelint
+```
+
+
+### Create: `stylelint.config.cjs` in your project
+
+```js
+const baseConfig = require("@front-cmdt/format/stylelint");
+module.exports = {
+  ...baseConfig,
+  extends: [...(baseConfig.extends || ["stylelint-config-standard-scss"])],
+  rules: {
+    // свои переопределения
+  },
+};
 ```
 
 ## Script examples
