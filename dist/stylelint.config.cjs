@@ -35,7 +35,7 @@ var stylelint_config_default = {
       "always",
       {
         except: ["first-nested"],
-        ignoreAtRules: ["else if", "else", "use", "import", "include"]
+        ignoreAtRules: ["else if", "else", "use", "import", "include", "tailwind"]
       }
     ],
     "rule-empty-line-before": [

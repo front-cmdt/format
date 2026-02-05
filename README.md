@@ -1,190 +1,169 @@
 # @front-cmdt/format
 
+## Установка
+
+```bash
+npm i -D @front-cmdt/format
+# или
+yarn add -D @front-cmdt/format
+# или
+pnpm add -D @front-cmdt/format
+```
+
+## Prettier
+
 Общий **Prettier config** для проектов. Включает:
 
 - Сортировку импортов через `@trivago/prettier-plugin-sort-imports`
 - Автоматическую сортировку Tailwind CSS классов через `prettier-plugin-tailwindcss`
 
-## Требования
-
-- `prettier` (peer dependency): `^3.0.0`
-
-## Установка
-
-```bash
-npm i -D @front-cmdt/format prettier
-# или
-yarn add -D @front-cmdt/format prettier
-# или
-pnpm add -D @front-cmdt/format prettier
-```
-
-### Создайте: `prettier.config.js` в проекте
+### Создайте: `prettier.config.mjs` в проекте
 
 ```js
-import config from "@front-cmdt/format/prettier";
+import config from '@front-cmdt/format/prettier';
 
 export default config;
 ```
 
-## Пример скриптов
+### Пример скриптов
 
 `package.json`:
 
 ```json
 {
   "scripts": {
-    "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "prettier:fix": "prettier . --write",
+    "prettier:check": "prettier . --check"
   }
 }
 ```
 
-=====================================================
+---
+
+## Stylelint
 
 Общий **stylelint** для проектов. Включает:
 
-- Настройки и конфигурацию стайллинта для CSS и SCSS (с поддержкой `stylelint-config-clean-order`, `stylelint-config-standard`, `stylelint-config-standard-scss` и плагина `stylelint-scss`)
+- Автоматическую очистку и сортировку свойств через `stylelint-config-clean-order`
+- Поддержку SCSS через `stylelint-scss` и `postcss-scss`
+- Базовые правила для предотвращения ошибок (пустые блоки, дубликаты селекторов и т.д.)
 
-## Требования
-
-- `stylelint` (peer dependency): `^17.1.1`
-- `stylelint-config-clean-order` (peer dependency): `^8.0.0`
-- `stylelint-config-standard` (peer dependency): `^40.0.0`
-- `sass` (peer dependency): `^1.97.3` --- (для SCSS)
-- `stylelint-scss` (peer dependency): `^7.0.0` --- (для SCSS)
-- `stylelint-config-standard-scss` (peer dependency): `^17.0.0` --- (для SCSS)
-
-## Установка
-
-```bash
-npm i -D @front-cmdt/format stylelint
-# или
-yarn add -D @front-cmdt/format stylelint
-# или
-pnpm add -D @front-cmdt/format stylelint
-```
-
-
-### Создайте: `stylelint.config.cjs` в проекте
+### Создайте: `stylelint.config.mjs` в проекте
 
 ```js
-const baseConfig = require("@front-cmdt/format/stylelint");
-module.exports = {
-  ...baseConfig,
-  extends: [...(baseConfig.extends || ["stylelint-config-standard-scss"])],
-  rules: {
-    // свои переопределения
-  },
-};
+import config from '@front-cmdt/format/stylelint';
+
+export default config;
 ```
 
-## Пример скриптов
+### Пример скриптов
 
 `package.json`:
 
 ```json
 {
   "scripts": {
-    "stylelint": "stylelint '**/*.{css,scss}'",
-    "stylelint:fix": "stylelint '**/*.{css,scss}' --fix"
+    "stylelint:fix": "stylelint '**/*.{css,scss}' --fix",
+    "stylelint:check": "stylelint '**/*.{css,scss}'"
   }
 }
 ```
 
+## Пример общего скрипта для форматирования
+
+`package.json`:
+
+```json
+{
+  "scripts": {
+    "format": "npm run stylelint:fix && npm run prettier:fix"
+  }
+}
+```
 
 ---
 
 # @front-cmdt/format (EN)
+
+## Installation
+
+```bash
+npm i -D @front-cmdt/format
+# or
+yarn add -D @front-cmdt/format
+# or
+pnpm add -D @front-cmdt/format
+```
+
+---
+
+## Prettier
 
 Shared **Prettier config** for projects. Includes:
 
 - Import sorting via `@trivago/prettier-plugin-sort-imports`
 - Automatic Tailwind CSS class sorting via `prettier-plugin-tailwindcss`
 
-## Requirements
-
-- `prettier` (peer dependency): `^3.0.0`
-
-## Install
-
-```bash
-npm i -D @front-cmdt/format prettier
-# or
-yarn add -D @front-cmdt/format prettier
-# or
-pnpm add -D @front-cmdt/format prettier
-```
-
-### Create: `prettier.config.js` in your project
+### Create: `prettier.config.mjs` in your project
 
 ```js
-import config from "@front-cmdt/format/prettier";
+import config from '@front-cmdt/format/prettier';
 
 export default config;
 ```
 
-## Script examples
+### Script examples
 
 `package.json`:
 
 ```json
 {
   "scripts": {
-    "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "prettier:fix": "prettier . --write",
+    "prettier:check": "prettier . --check"
   }
 }
 ```
 
-=====================================================
+---
 
-Shared **Stylelint** for projects. Includes:
+## Stylelint
 
-- Stylelint settings and configuration for CSS and SCSS (with support for `stylelint-config-clean-order`, `stylelint-config-standard`, `stylelint-config-standard-scss`, and the `stylelint-scss` plugin)
+Shared **Stylelint config** for projects. Includes:
 
-## Requirements
+- Automatic property ordering and cleaning via `stylelint-config-clean-order`
+- SCSS support via `stylelint-scss` and `postcss-scss`
+- Core rules for error prevention (empty blocks, duplicate selectors, etc.)
 
-- `stylelint` (peer dependency): `^17.1.1`
-- `stylelint-config-clean-order` (peer dependency): `^8.0.0`
-- `stylelint-config-standard` (peer dependency): `^40.0.0`
-- `sass` (peer dependency): `^1.97.3` --- (for SCSS)
-- `stylelint-scss` (peer dependency): `^7.0.0` --- (for SCSS)
-- `stylelint-config-standard-scss` (peer dependency): `^17.0.0` --- (for SCSS)
-
-## Install
-
-```bash
-npm i -D @front-cmdt/format stylelint
-# or
-yarn add -D @front-cmdt/format stylelint
-# or
-pnpm add -D @front-cmdt/format stylelint
-```
-
-
-### Create: `stylelint.config.cjs` in your project
+### Create: `stylelint.config.mjs` in your project
 
 ```js
-const baseConfig = require("@front-cmdt/format/stylelint");
-module.exports = {
-  ...baseConfig,
-  extends: [...(baseConfig.extends || ["stylelint-config-standard-scss"])],
-  rules: {
-    // свои переопределения
-  },
-};
+import config from '@front-cmdt/format/stylelint';
+
+export default config;
 ```
 
-## Script examples
+### Script examples
 
 `package.json`:
 
 ```json
 {
   "scripts": {
-    "stylelint": "stylelint '**/*.{css,scss}'",
-    "stylelint:fix": "stylelint '**/*.{css,scss}' --fix"
+    "stylelint:fix": "stylelint '**/*.{css,scss}' --fix",
+    "stylelint:check": "stylelint '**/*.{css,scss}'"
+  }
+}
+```
+
+## Shared formatting script example
+
+`package.json`:
+
+```json
+{
+  "scripts": {
+    "format": "npm run stylelint:fix && npm run prettier:fix"
   }
 }
 ```

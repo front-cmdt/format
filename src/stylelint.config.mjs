@@ -1,3 +1,4 @@
+/** @type {import('stylelint').Config} */
 export default {
   extends: ['stylelint-config-clean-order'],
   plugins: ['stylelint-scss'],
@@ -11,7 +12,7 @@ export default {
       'always',
       {
         except: ['first-nested'],
-        ignoreAtRules: ['else if', 'else', 'use', 'import', 'include']
+        ignoreAtRules: ['else if', 'else', 'use', 'import', 'include', 'tailwind']
       }
     ],
     'rule-empty-line-before': [
