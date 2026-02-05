@@ -1,6 +1,6 @@
 {
   "name": "@front-cmdt/format",
-  "version": "1.3.0",
+  "version": "1.3.2",
   "keywords": [
     "prettier",
     "trivago",
@@ -13,7 +13,14 @@
     "formatting",
     "code style",
     "code formatting",
-    "code styling"
+    "code styling",
+    "stylelint",
+    "stylelint-config",
+    "stylelint-scss",
+    "scss lint",
+    "scss linting",
+    "css lint",
+    "css linting"
   ],
   "type": "module",
   "publishConfig": {
@@ -21,11 +28,18 @@
   },
   "license": "ISC",
   "peerDependencies": {
-    "prettier": "^3.0.0"
+    "sass": "^1.5.0"
   },
   "dependencies": {
+    "prettier": "^3.0.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "prettier-plugin-tailwindcss": "^0.7.2"
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "stylelint": "^17.1.1",
+    "stylelint-config-clean-order": "^8.0.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-scss": "^7.0.0",
+    "stylelint-order": "^7.0.0"
   },
   "main": "./dist/prettier.config.cjs",
   "module": "./dist/prettier.config.js",
@@ -35,7 +49,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "tsup src/prettier.config.mjs --format esm,cjs --dts --clean",
+    "build": "tsup src/prettier.config.mjs src/stylelint.config.mjs --format esm,cjs --dts --clean",
     "release:patch": "yarn build && npm version patch -m \"release: v%s\" && git push --follow-tags",
     "release:minor": "yarn build && npm version minor -m \"release: v%s\" && git push --follow-tags",
     "release:major": "yarn build && npm version major -m \"release: v%s\" && git push --follow-tags",
@@ -61,6 +75,16 @@
       "require": {
         "types": "./dist/prettier.config.d.cts",
         "default": "./dist/prettier.config.cjs"
+      }
+    },
+    "./stylelint": {
+      "import": {
+        "types": "./dist/stylelint.config.d.ts",
+        "default": "./dist/stylelint.config.js"
+      },
+      "require": {
+        "types": "./dist/stylelint.config.d.cts",
+        "default": "./dist/stylelint.config.cjs"
       }
     }
   },

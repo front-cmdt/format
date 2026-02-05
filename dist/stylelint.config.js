@@ -1,0 +1,30 @@
+// src/stylelint.config.mjs
+var stylelint_config_default = {
+  extends: ["stylelint-config-clean-order"],
+  plugins: ["stylelint-scss"],
+  customSyntax: "postcss-scss",
+  rules: {
+    "block-no-empty": true,
+    "color-hex-length": "long",
+    "no-duplicate-selectors": true,
+    "selector-max-id": 0,
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        except: ["first-nested"],
+        ignoreAtRules: ["else if", "else", "use", "import", "include"]
+      }
+    ],
+    "rule-empty-line-before": [
+      "always",
+      {
+        except: ["first-nested"]
+      }
+    ],
+    "order/properties-alphabetical-order": null,
+    "order/order": ["custom-properties", "dollar-variables", "at-variables", "declarations", "at-rules", "rules"]
+  }
+};
+export {
+  stylelint_config_default as default
+};
