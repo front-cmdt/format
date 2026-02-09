@@ -48,7 +48,8 @@
   "types": "./dist/prettier.config.d.ts",
   "files": [
     "dist",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "README.md"
   ],
   "scripts": {
     "build": "tsup src/prettier.config.mjs src/stylelint.config.mjs --format esm,cjs --dts --clean",
