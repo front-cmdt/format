@@ -16,6 +16,7 @@ pnpm add -D @front-cmdt/format
 
 - Сортировку импортов через `@trivago/prettier-plugin-sort-imports`
 - Автоматическую сортировку Tailwind CSS классов через `prettier-plugin-tailwindcss`
+- Поддержку форматирования файлов `.astro` через `prettier-plugin-astro`
 
 ### Создайте: `prettier.config.mjs` в проекте
 
@@ -103,6 +104,7 @@ Shared **Prettier config** for projects. Includes:
 
 - Import sorting via `@trivago/prettier-plugin-sort-imports`
 - Automatic Tailwind CSS class sorting via `prettier-plugin-tailwindcss`
+- `.astro` file formatting support via `prettier-plugin-astro`
 
 ### Create: `prettier.config.mjs` in your project
 

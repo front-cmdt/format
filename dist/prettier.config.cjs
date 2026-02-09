@@ -78,5 +78,13 @@ var prettier_config_default = {
     // Относительные импорты из текущей директории
   ],
   // Подключённые плагины Prettier
-  plugins: ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"]
+  plugins: ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  overrides: [
+    {
+      files: "*.astro",
+      options: {
+        parser: "astro"
+      }
+    }
+  ]
 };
