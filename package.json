@@ -29,6 +29,7 @@
     "access": "public"
   },
   "license": "ISC",
+  "readme": "README.md",
   "peerDependencies": {
     "sass": "^1.5.0"
   },
