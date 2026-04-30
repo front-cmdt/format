@@ -1,5 +1,10 @@
 # @front-cmdt/format
 
+[![npm](https://img.shields.io/npm/v/@front-cmdt/format)](https://www.npmjs.com/package/@front-cmdt/format)
+[![GitHub](https://img.shields.io/badge/GitHub-front--cmdt%2Fformat-blue?logo=github)](https://github.com/front-cmdt/format)
+
+Общий конфиг **Prettier** и **Stylelint** для проектов — с сортировкой импортов, классов Tailwind CSS, поддержкой SCSS и Astro.
+
 ## Установка
 
 ```bash
@@ -85,6 +90,8 @@ export default config;
 ---
 
 # @front-cmdt/format (EN)
+
+Shared **Prettier** and **Stylelint** config for projects — with import sorting, Tailwind CSS class ordering, SCSS and Astro support.
 
 ## Installation
 
