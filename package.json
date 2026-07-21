@@ -1,6 +1,15 @@
 {
   "name": "@front-cmdt/format",
-  "version": "1.3.0",
+  "version": "1.4.6",
+  "description": "Shared Prettier and Stylelint configs with import sorting, Tailwind CSS class ordering, SCSS and Astro support",
+  "homepage": "https://github.com/front-cmdt/format#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/front-cmdt/format.git"
+  },
+  "bugs": {
+    "url": "https://github.com/front-cmdt/format/issues"
+  },
   "keywords": [
     "prettier",
     "trivago",
@@ -33,15 +42,15 @@
     "sass": "^1.5.0"
   },
   "dependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "postcss-scss": "^4.0.9",
-    "prettier": "^3.0.0",
+    "@trivago/prettier-plugin-sort-imports": "5.2.2",
+    "postcss-scss": "4.0.9",
+    "prettier": "3.8.4",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.2",
-    "stylelint": "^17.1.1",
-    "stylelint-config-clean-order": "^8.0.0",
-    "stylelint-order": "^7.0.0",
-    "stylelint-scss": "^7.0.0"
+    "prettier-plugin-tailwindcss": "0.7.2",
+    "stylelint": "17.1.1",
+    "stylelint-config-clean-order": "8.0.0",
+    "stylelint-order": "7.0.1",
+    "stylelint-scss": "7.0.0"
   },
   "main": "./dist/prettier.config.cjs",
   "module": "./dist/prettier.config.js",

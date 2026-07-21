@@ -24,7 +24,7 @@ __export(prettier_config_exports, {
 module.exports = __toCommonJS(prettier_config_exports);
 var prettier_config_default = {
   // Запятые в конце: "none" - без запятых, "es5" - где допустимо в ES5, "all" - везде
-  trailingComma: "none",
+  trailingComma: "all",
   // Количество пробелов для отступа
   tabWidth: 2,
   // Использовать табы вместо пробелов
