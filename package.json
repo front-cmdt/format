@@ -39,12 +39,12 @@
   },
   "license": "ISC",
   "peerDependencies": {
+    "prettier": "^3.0.0",
     "sass": "^1.5.0"
   },
   "dependencies": {
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
     "postcss-scss": "4.0.9",
-    "prettier": "3.8.4",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.7.2",
     "stylelint": "17.1.1",
@@ -60,7 +60,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "tsup src/prettier.config.mjs src/stylelint.config.mjs --format esm,cjs --dts --clean",
+    "build": "tsup src/prettier.config.mjs src/stylelint.config.mjs --format esm,cjs --dts --clean --shims",
     "release:patch": "yarn build && npm version patch -m \"release: v%s\" && git push --follow-tags",
     "release:minor": "yarn build && npm version minor -m \"release: v%s\" && git push --follow-tags",
     "release:major": "yarn build && npm version major -m \"release: v%s\" && git push --follow-tags",
@@ -90,6 +90,7 @@
     }
   },
   "devDependencies": {
+    "prettier": "3.8.4",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
     "yalc": "^1.0.0-pre.53"

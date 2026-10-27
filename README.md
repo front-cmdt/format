@@ -8,12 +8,14 @@
 ## Установка
 
 ```bash
-npm i -D @front-cmdt/format
+npm i -D @front-cmdt/format prettier
 # или
-yarn add -D @front-cmdt/format
+yarn add -D @front-cmdt/format prettier
 # или
-pnpm add -D @front-cmdt/format
+pnpm add -D @front-cmdt/format prettier
 ```
+
+`prettier` (^3.0.0) — peer-зависимость, ставится в проекте.
 
 ## Prettier
 
@@ -96,12 +98,14 @@ Shared **Prettier** and **Stylelint** config for projects — with import sortin
 ## Installation
 
 ```bash
-npm i -D @front-cmdt/format
+npm i -D @front-cmdt/format prettier
 # or
-yarn add -D @front-cmdt/format
+yarn add -D @front-cmdt/format prettier
 # or
-pnpm add -D @front-cmdt/format
+pnpm add -D @front-cmdt/format prettier
 ```
+
+`prettier` (^3.0.0) is a peer dependency and must be installed in your project.
 
 ---
 

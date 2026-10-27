@@ -1,4 +1,6 @@
 // src/prettier.config.mjs
+import { createRequire } from "module";
+var require2 = createRequire(import.meta.url);
 var prettier_config_default = {
   // Запятые в конце: "none" - без запятых, "es5" - где допустимо в ES5, "all" - везде
   trailingComma: "all",
@@ -55,7 +57,12 @@ var prettier_config_default = {
     // Относительные импорты из текущей директории
   ],
   // Подключённые плагины Prettier
-  plugins: ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  // prettier-plugin-tailwindcss должен быть последним
+  plugins: [
+    require2.resolve("@trivago/prettier-plugin-sort-imports"),
+    require2.resolve("prettier-plugin-astro"),
+    require2.resolve("prettier-plugin-tailwindcss")
+  ],
   overrides: [
     {
       files: "*.astro",

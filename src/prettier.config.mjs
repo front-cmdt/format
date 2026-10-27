@@ -1,5 +1,10 @@
-/** @type {import("prettier").Config} */
+import { createRequire } from 'node:module'
 
+// Плагины отдаём абсолютными путями: строки prettier резолвит от cwd проекта,
+// а плагины лежат в зависимостях этого пакета и могут не подняться в корневой node_modules
+const require = createRequire(import.meta.url)
+
+/** @type {import("prettier").Config} */
 export default {
   // Запятые в конце: "none" - без запятых, "es5" - где допустимо в ES5, "all" - везде
   trailingComma: 'all',
@@ -52,7 +57,12 @@ export default {
     '^./(.*)$' // Относительные импорты из текущей директории
   ],
   // Подключённые плагины Prettier
-  plugins: ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
+  // prettier-plugin-tailwindcss должен быть последним
+  plugins: [
+    require.resolve('@trivago/prettier-plugin-sort-imports'),
+    require.resolve('prettier-plugin-astro'),
+    require.resolve('prettier-plugin-tailwindcss')
+  ],
   overrides: [
     {
       files: '*.astro',

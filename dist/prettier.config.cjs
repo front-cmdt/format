@@ -22,6 +22,14 @@ __export(prettier_config_exports, {
   default: () => prettier_config_default
 });
 module.exports = __toCommonJS(prettier_config_exports);
+
+// node_modules/tsup/assets/cjs_shims.js
+var getImportMetaUrl = () => typeof document === "undefined" ? new URL(`file:${__filename}`).href : document.currentScript && document.currentScript.tagName.toUpperCase() === "SCRIPT" ? document.currentScript.src : new URL("main.js", document.baseURI).href;
+var importMetaUrl = /* @__PURE__ */ getImportMetaUrl();
+
+// src/prettier.config.mjs
+var import_node_module = require("module");
+var require2 = (0, import_node_module.createRequire)(importMetaUrl);
 var prettier_config_default = {
   // Запятые в конце: "none" - без запятых, "es5" - где допустимо в ES5, "all" - везде
   trailingComma: "all",
@@ -78,7 +86,12 @@ var prettier_config_default = {
     // Относительные импорты из текущей директории
   ],
   // Подключённые плагины Prettier
-  plugins: ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  // prettier-plugin-tailwindcss должен быть последним
+  plugins: [
+    require2.resolve("@trivago/prettier-plugin-sort-imports"),
+    require2.resolve("prettier-plugin-astro"),
+    require2.resolve("prettier-plugin-tailwindcss")
+  ],
   overrides: [
     {
       files: "*.astro",
